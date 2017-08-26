@@ -13,6 +13,16 @@ public abstract class PageElement {
 		this.bySelector = bySelector;
 	}
 	
+	public void click() throws Exception {
+		try {
+			this.findElement();
+			this.element.click();
+		}
+		catch (Exception ex) {
+			throw ex;
+		}
+	}
+	
 	public void findElement() throws Exception {
 		try {
 			this.element = DriverUtil.getWebDriver().findElement(this.bySelector);

@@ -9,14 +9,16 @@ public class SeTests {
 	public static void main(String[] args) {
 		try {
 			DriverUtil.initDriver();
-			DriverUtil.openPage("https://www.google.com");
+			DriverUtil.openPage("http://the-internet.herokuapp.com/");
 
-			TextBoxElement tbSearch = new TextBoxElement(By.className("gsfi"));
-			tbSearch.sendKeys("test");
-			System.out.println();
+			TextBoxElement tbABTesting = new TextBoxElement(By.linkText("A/B Testing"));
+			tbABTesting.click();
 		}
 		catch (Exception ex) {
 			System.exit(1);
+		}
+		finally {
+			DriverUtil.closeDriver();
 		}
 	}
 

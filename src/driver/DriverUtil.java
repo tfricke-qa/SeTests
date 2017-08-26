@@ -9,6 +9,10 @@ public class DriverUtil {
 		driver = new Driver();
 	}
 
+	public static void closeDriver() {
+		driver.close();
+	}
+	
 	public static void openPage(String url) throws Exception {
 		getWebDriver().get(url);
 	}
